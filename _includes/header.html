@@ -13,21 +13,22 @@
     <a class="navbar-brand wow fadeInDownBig" href="index.html"><img class="office-logo" src="../assets/img/slider/Office.png" alt="Office"></a>      
   </div>
 
+  {% assign current = page.url | downcase | split: '/' %}
   <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav pull-right">
-      <li class="active">
+      <li {% if current[1] == ''%} class="active" {%endif%}>
         <a href="/">Home</a>
       </li>
-      <li>
+      <li {% if current[1] == 'about'%} class="active" {%endif%}>
         <a href="/about.html">About</a>
       </li>
-      <li>
+      <li {% if current[1] == 'blog'%} class="active" {%endif%}>
         <a href="/blog.html">Blog</a>
       </li>
-      <li>
+      <li {% if current[1] == 'team'%} class="active" {%endif%}>
         <a href="/team.html">Team</a>
       </li>
-      <li>
+      <li {% if current[1] == 'contact'%} class="active" {%endif%}}>
         <a href="/contact.html"><span>Contact</span></a>
       </li>
     </ul>         
