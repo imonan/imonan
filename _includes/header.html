@@ -16,7 +16,7 @@
   {% assign current = page.url | downcase | split: '/' %}
   <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav pull-right">
-      <li {% if current.size =='1'%} class="active" {%endif%}>
+      <li {% if current.size < 2 %} class="active" {%endif%}>
         <a href="/">Home</a>
       </li>
       <li {% if current[1] == 'about'%} class="active" {%endif%}>
